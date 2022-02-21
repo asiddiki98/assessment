@@ -69,7 +69,7 @@ table {
 .form-title{
     padding: 20px;
     color: white;
-    font-family: cursive;
+    font-family:  fangsong;
     padding-top: 10px;
     padding-bottom: 10px;
     font-size: 30px;
@@ -83,7 +83,7 @@ table {
 .input-prompt{
     padding: 20px;
     color: white;
-    font-family: cursive;
+    font-family:  fangsong;
     padding-top: 10px;
     padding-bottom: 10px;
     align-self: center;
@@ -115,14 +115,15 @@ table {
     align-self: center;
     border-radius: 5px;
     color: white;
-    font-family: cursive;
+    font-family:  fangsong;
+    font-size: 20px;
     background-color: #0987eb;
 }
 
 .registration-alternative{
     align-self: center;
     color: white;
-    font-family: cursive;
+    font-family: fangsong;
     padding-top: 20px;
 }
 
@@ -145,7 +146,7 @@ table {
 }
 
 .user{
-    font-family: cursive;
+    font-family:  fangsong;
     padding-top: 10px;
     padding-bottom: 10px;
     font-size: 30px;
@@ -153,7 +154,7 @@ table {
     color: white;
 }
 .logout-bttn{
-    font-family: cursive;
+    font-family:  fangsong;
     height: 30px;
     width: 100px;
     background-color: #0987eb;
@@ -181,8 +182,9 @@ table {
 .create-note-bttn{
     float: right;
     position: sticky;
-    font-family: cursive;
+    font-family:  fangsong;
     background-color: #0987eb;
+    padding: 5px;
     border: none;
     color: white;
     transform: translate(205px, 310px);
@@ -194,7 +196,7 @@ table {
 }
 
 .note-header{
-    font-family: cursive;
+    font-family:  fangsong;
     padding-top: 10px;
     padding-bottom: 10px;
     font-size: 30px;
