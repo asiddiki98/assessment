@@ -23,7 +23,6 @@ class SignupForm extends React.Component {
         if (nextProps.currentUser === true) {
             this.props.history.push('/browse');
         }
-        console.log(nextProps)
 
         this.setState({ errors: nextProps.errors })
     }

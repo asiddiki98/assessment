@@ -4,7 +4,6 @@ const Note = require("../../models/Note");
 const validateNote = require("../../validation/note");
 
 router.get("/:email", (req, res) => {
-    console.log(req)
     Note.find({ creator: req.params.email })
     .then(notes => res.json({notes}))
     .catch((err => res.status(404).json({notesEror: "no notes"})))

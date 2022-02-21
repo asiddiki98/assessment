@@ -13,7 +13,6 @@ const NotesReducer = (state = _notes, action) => {
             action.userNotes.notes.forEach( element => {notes[element._id] = element })
             return notes;
         case RECEIVE_USER_NOTE:
-            debugger
             return Object.assign({}, state, {[action.userNote._id]: action.userNote});
         default:
             return state;

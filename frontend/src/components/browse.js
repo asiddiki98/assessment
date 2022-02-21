@@ -8,7 +8,6 @@ const style = {
     tableCell: {
         border: '1px solid gray',
         margin: 0,
-        padding: '5px 10px',
         width: 'max-content',
         minWidth: '150px'
     },
@@ -50,6 +49,11 @@ class  Browse extends React.Component{
             creator: this.props.user.email
         }
         this.props.addNote(note)
+            .then(() => {
+                this.setState({
+                    note: ""
+                })
+            })
     }
 
     render(){
@@ -58,7 +62,7 @@ class  Browse extends React.Component{
         const userNotes=  this.props.notes && Object.values(this.props.notes).map((note, idx) => {
             return (
                 <tr key={idx}>
-                    <th>{note.note}</th>
+                    <th style={style.tableCell}>{note.note}</th>
                 </tr>
             )
         })
@@ -83,13 +87,18 @@ class  Browse extends React.Component{
                     </textarea>
                     <button>Add Note</button>
                 </form>
+
                 <table style={style.tableCell}>
                     <thead>
                         <tr>
                             <th style={style.tableCell}>Notes</th>
                         </tr>
                     </thead>
+                    <tbody>
+
                     {userNotes}
+
+                    </tbody>
                 </table>
 
             </>
@@ -104,7 +113,8 @@ const mapStateToProps = state => {
     return {
         user: state.session.user,
         loggedIn: state.session.isAuthenticated,
-        notes: state.notes
+        notes: state.notes,
+        errors: state.errors
     }
 };
 

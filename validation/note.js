@@ -5,7 +5,7 @@ module.exports = function (data) {
     let errors = {};
 
     data.note = validText(data.note) ? data.note : '';
-    console.log(data)
+
     if (Validator.isEmpty(data.note)) {
         errors.note = "note can not be empty";
     }

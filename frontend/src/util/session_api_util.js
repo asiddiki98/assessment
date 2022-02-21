@@ -21,6 +21,5 @@ export const createNote = (note) => {
 }
 
 export const getNotes = (creator) => {
-    console.log(creator)
     return axios.get(`/api/notes/${creator}`, )
 }
