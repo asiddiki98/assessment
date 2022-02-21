@@ -4,6 +4,12 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { login, actionGoogleLogin } from '../../actions/session_actions';
 
+const style = {
+    formContainer: {
+
+    }
+}
+
 
 
 class LoginForm extends React.Component {
@@ -70,38 +76,40 @@ class LoginForm extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className='form-container'>
+                <h1 className='form-title'>Sign In</h1>
                 <form onSubmit={this.handleSubmit}>
 
-                    <div>
-                        <p className="form-prompt">Email</p>
-                        <input type="text"
+                    <div className='input'>
+                        <p className="input-prompt">Email</p>
+                        <input className='input-field' type="text"
                             value={this.state.email}
                             onChange={this.update('email')}
                             placeholder="Email"
                         />
-                        <p>{this.state.errors.email}</p>
+                        <p className='errors'>{this.state.errors.email}</p>
                     </div>
 
-                    <div >
-                        <p >Password</p>
-                        <input type="password"
+                    <div className='input'>
+                        <p className='input-prompt' >Password</p>
+                        <input className='input-field' type="password"
                             value={this.state.password}
                             onChange={this.update('password')}
                             placeholder="Password"
                         />
-                        <p >{this.state.errors.password}</p>
+                        <p className='errors' >{this.state.errors.password}</p>
                     </div>
 
-                    <div>
-                        <button>login</button>
-                        <div>Need an account? <Link to="/signup">Sign Up!</Link></div>
-                    </div>
+                    <div className='registration'>
+                        <button className='registration-button'>login</button>
+                        <div className='registration-alternative'>Need an account? <Link style={{ color: "white" }} to="/signup">Sign Up!</Link></div>
+                    </div >
                     <GoogleLogin
                         clientId="728506483786-lsrimoj61fi0hn0v3pq37pksvutvu8j3.apps.googleusercontent.com"
                         onSuccess={this.googleSuccess}
                         onFailure={this.googleFailure}
                         cookiePolicy="single_host_origin"
+                        className='google-button'
                     >
 
                     </GoogleLogin>

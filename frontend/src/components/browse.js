@@ -61,47 +61,35 @@ class  Browse extends React.Component{
 
         const userNotes=  this.props.notes && Object.values(this.props.notes).map((note, idx) => {
             return (
-                <tr key={idx}>
-                    <th style={style.tableCell}>{note.note}</th>
-                </tr>
+                <div className='note-card' key={idx}>
+                    <p className='note'>{note.note}</p>
+                </div>
             )
         })
         return (
     
-            <>
-                <div style={{
-                    display:"flex",
-                    justifyContent: "space-between",
-                    width: "100",
-
-                }}>
-                    <h1>Hello {`${firstname} ${lastname}`}</h1> 
-                    <button  onClick={this.logoutUser}>logout</button>
+            <div className='browse'>
+                <div className='nav'>
+                    <h1 className='user'>Hello {`${firstname} ${lastname}`}</h1> 
+                    <button className='logout-bttn'  onClick={this.logoutUser}>logout</button>
                 </div>
     
-                <form onSubmit={this.handleSubmit}>
+                <form className='note-form' onSubmit={this.handleSubmit}>
                     <textarea
+                        className='note-input'
                         value={this.state.note}
                         onChange={this.handleChange('note')}
                     >
                     </textarea>
-                    <button>Add Note</button>
+                    <button className='create-note-bttn'>Add Note</button>
                 </form>
+                    <h1 className='note-header' >Notes</h1>
+                <div className='notes-container'>
 
-                <table style={style.tableCell}>
-                    <thead>
-                        <tr>
-                            <th style={style.tableCell}>Notes</th>
-                        </tr>
-                    </thead>
-                    <tbody>
 
                     {userNotes}
-
-                    </tbody>
-                </table>
-
-            </>
+                </div>
+            </div>
             
         )
     }

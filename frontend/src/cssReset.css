@@ -1,0 +1,221 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+html{
+    height: 100%;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+    height: 100%;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+#root{
+    height: 100%;
+}
+
+.App{
+    min-height: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: #010414c4;
+}
+.form-container{
+    min-height: 400px;
+    align-self: center;
+    width: 350px;
+    padding: 10px;
+    margin: 20px;
+    border: 2px solid black;
+    background-color: rgba(89, 21, 21, 0.16);
+}
+
+.form-title{
+    padding: 20px;
+    color: white;
+    font-family: cursive;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 30px;
+    padding-left: 125px;
+    /* align-self: center; */
+}
+.input{
+    align-self: center;
+}
+
+.input-prompt{
+    padding: 20px;
+    color: white;
+    font-family: cursive;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    align-self: center;
+}
+.input-field{
+    width: 300px;
+    margin-left: 17px;
+    height: 25px;
+    border-radius: 3px;
+    border: none;
+    margin-bottom: 10px;
+}
+.errors{
+    align-self: center;
+    margin-left: 17px;
+    color: red
+}
+
+.registration{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+}
+
+.registration-button{
+    width: 250px;
+    height: 30px;
+    align-self: center;
+    border-radius: 5px;
+    color: white;
+    font-family: cursive;
+    background-color: #0987eb;
+}
+
+.registration-alternative{
+    align-self: center;
+    color: white;
+    font-family: cursive;
+    padding-top: 20px;
+}
+
+.google-button{
+    width: 300px;
+    margin-left: 26px;
+}
+
+.browse{
+    height: 100%;
+    width: 100%;
+}
+
+.nav{
+    border-bottom: 1px solid black;
+    display: flex;
+    justify-content: space-between;
+    background-color: rgba(89, 21, 21, 0.16);
+    border-radius: 9px;
+}
+
+.user{
+    font-family: cursive;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 30px;
+    padding-left: 16px;
+    color: white;
+}
+.logout-bttn{
+    font-family: cursive;
+    height: 30px;
+    width: 100px;
+    background-color: #0987eb;
+    transform: translate(-20px, 10px);
+    border: none;
+}
+
+.note-form{
+    width: 100%;
+}
+
+.note-input{
+    margin-top: 80px;
+    width: 300px;
+    height: 228px;
+    float: right;
+    padding: 20px;
+    margin-right: 95px;
+    font-family: fangsong;
+    font-size: 20px;
+    background-color: #F3E779;
+    border-radius: 5px;
+}
+
+.create-note-bttn{
+    float: right;
+    position: sticky;
+    font-family: cursive;
+    background-color: #0987eb;
+    border: none;
+    color: white;
+    transform: translate(205px, 310px);
+}
+
+.notes-container{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.note-header{
+    font-family: cursive;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 30px;
+    padding-left: 16px;
+    transform: translate(455px, 10px);
+    color: white;
+    float: left;
+    position: sticky;
+}
+
+.note-card{
+    margin-top: 83px;
+    min-width: 200px;
+    max-width: 200px;
+    word-wrap: break-word;
+    height: 228px;
+    margin-left: 25px;
+    font-family: fangsong;
+    background-color: #F3E779;
+    border-radius: 5px;
+    padding: 15px;
+    width: fit-content;
+
+}

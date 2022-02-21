@@ -61,66 +61,66 @@ class SignupForm extends React.Component {
 
     render(){
         return (
-            <div>
-                <h1>Sign Up</h1>
+            <div className='form-container'>
+                <h1 className='form-title'>Sign Up</h1>
                 <form onSubmit={this.handleSubmit}>
                     <div>
-                        <div>
-                            <p>Email</p>
-                            <input type="text"
+                        <div className='input'>
+                            <p className='input-prompt'>Email</p>
+                            <input className='input-field' type="text"
                                 value={this.state.email}
                                 onChange={this.update('email')}
                                 placeholder="Please enter your email."
                             />
-                            <p>{this.state.errors.email}</p>
+                            <p className='errors'>{this.state.errors.email}</p>
                         </div>
-                        <div>
-                            <p>Name</p>
+                        <div className='input'>
+                            <p className='input-prompt'>Name</p>
                             <div>
                                 <div>
 
-                                    <input type="text"
+                                    <input className='input-field' type="text"
                                         value={this.state.firstname}
                                         onChange={this.update('firstname')}
                                         placeholder="First name"
                                     />
-                                    <p>{this.state.errors.firstname}</p>
+                                    <p className='errors'>{this.state.errors.firstname}</p>
                                 </div>
                                 <div>
 
-                                    <input type="text"
+                                    <input className='input-field' type="text"
                                         value={this.state.lastname}
                                         onChange={this.update('lastname')}
                                         placeholder="Last name"
                                     />
-                                    <p>{this.state.errors.lastname}</p>
+                                    <p className='errors'>{this.state.errors.lastname}</p>
                                 </div>
                             </div>
                         </div>
 
-                        <div>
-                            <p>Password</p>
-                            <input type="password"
+                        <div className='input'>
+                            <p className='input-prompt'>Password</p>
+                            <input  className='input-field' type="password"
                                 value={this.state.password}
                                 onChange={this.update('password')}
                                 placeholder="Create a password."
                             />
-                            <p>{this.state.errors.password}</p>
+                            <p className='errors'>{this.state.errors.password}</p>
                         </div>
 
-                        <div>
-                            <p className="form-prompt">Confirm Password</p>
-                            <input type="password"
+                        <div className='input'>
+                            <p className='input-prompt'>Confirm Password</p>
+                            <input className='input-field' type="password"
                                 value={this.state.password2}
                                 onChange={this.update('password2')}
                                 placeholder="Enter your password again."
                             />
-                            <p>{this.state.errors.password2}</p>
+                            <p className='errors'>{this.state.errors.password2}</p>
                         </div>
 
-                        <div >
-                            <div>Already have an account? <Link to="/">Login!</Link></div>
-                            <button id="signup-button" >Sign Up</button>
+                        <div className='registration'>
+                            <button className='registration-button' id="signup-button" >Sign Up</button>
+                            <div className='registration-alternative'>Already have an account? <Link style={{color: "white"}} to="/">Login!</Link></div>
                         </div>
                     </div>
 
