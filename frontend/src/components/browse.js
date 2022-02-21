@@ -12,26 +12,7 @@ const style = {
         width: 'max-content',
         minWidth: '150px'
     },
-    form: {
-        container: {
-            padding: '20px',
-            border: '1px solid #F0F8FF',
-            borderRadius: '15px',
-            width: 'max-content',
-            marginBottom: '40px'
-        },
-        inputs: {
-            marginBottom: '5px'
-        },
-        submitBtn: {
-            marginTop: '10px',
-            padding: '10px 15px',
-            border: 'none',
-            backgroundColor: 'lightseagreen',
-            fontSize: '14px',
-            borderRadius: '5px'
-        }
-    }
+
 }
 
 
@@ -84,17 +65,24 @@ class  Browse extends React.Component{
         return (
     
             <>
-                <h1>Hello {`${firstname} ${lastname}`}</h1> 
+                <div style={{
+                    display:"flex",
+                    justifyContent: "space-between",
+                    width: "100",
+
+                }}>
+                    <h1>Hello {`${firstname} ${lastname}`}</h1> 
+                    <button  onClick={this.logoutUser}>logout</button>
+                </div>
     
                 <form onSubmit={this.handleSubmit}>
-                    <input
+                    <textarea
                         value={this.state.note}
                         onChange={this.handleChange('note')}
                     >
-                    </input>
+                    </textarea>
                     <button>Add Note</button>
                 </form>
-                <button  onClick={this.logoutUser}>logout</button>
                 <table style={style.tableCell}>
                     <thead>
                         <tr>

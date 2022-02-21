@@ -106,8 +106,6 @@ class LoginForm extends React.Component {
 
                     </GoogleLogin>
                 </form>
-
-                {/* <Chat /> */}
             </div>
         );
     }
