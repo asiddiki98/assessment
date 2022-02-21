@@ -1,7 +1,8 @@
 import { withRouter, Link } from 'react-router-dom';
+import { GoogleLogin } from "react-google-login"
 import React from 'react';
 import { connect } from 'react-redux';
-import { login } from '../../actions/session_actions';
+import { login, actionGoogleLogin } from '../../actions/session_actions';
 
 
 
@@ -14,7 +15,7 @@ class LoginForm extends React.Component {
             password: '',
             errors: {}
         };
-
+        this.googleSuccess = this.googleSuccess.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this);
         this.renderErrors = this.renderErrors.bind(this);
     }
@@ -56,6 +57,16 @@ class LoginForm extends React.Component {
         );
     }
 
+    async googleSuccess(res){
+        
+        this.props.googleLogin(res)
+    }
+
+    googleFailure(error){
+        console.log(error)
+        console.log("google sign in was failed")
+    }
+
 
     render() {
         return (
@@ -83,10 +94,17 @@ class LoginForm extends React.Component {
                     </div>
 
                     <div>
+                        <button>login</button>
                         <div>Need an account? <Link to="/signup">Sign Up!</Link></div>
-                            <button>login</button>
                     </div>
+                    <GoogleLogin
+                        clientId="728506483786-lsrimoj61fi0hn0v3pq37pksvutvu8j3.apps.googleusercontent.com"
+                        onSuccess={this.googleSuccess}
+                        onFailure={this.googleFailure}
+                        cookiePolicy="single_host_origin"
+                    >
 
+                    </GoogleLogin>
                 </form>
 
                 {/* <Chat /> */}
@@ -104,6 +122,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         login: user => dispatch(login(user)),
+        googleLogin: user => dispatch(actionGoogleLogin(user))
     }
 }
 

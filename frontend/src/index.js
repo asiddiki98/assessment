@@ -11,9 +11,21 @@ document.addEventListener('DOMContentLoaded', () => {
   let store;
 
   if (localStorage.jwtToken) {
+    // debugger
     setAuthToken(localStorage.jwtToken);
     const decodedUser = jwt_decode(localStorage.jwtToken);
-    const preloadedState = { session: { isAuthenticated: true, user: decodedUser } };
+    let user;
+    if (decodedUser?.iss === "accounts.google.com"){
+      user = {
+        id: decodedUser.sub,
+        firstname: decodedUser.given_name,
+        lastname: decodedUser.family_name,
+        email: decodedUser.email,
+      }
+    } else {
+      user = decodedUser
+    }
+    const preloadedState = { session: { isAuthenticated: true, user: user } };
     store = configureStore(preloadedState);
     const currentTime = Date.now() / 1000;
 
@@ -21,6 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
       store.dispatch(logout());
       window.location.href = '/';
     }
+
   } else {
     store = configureStore({});
   }

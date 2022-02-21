@@ -15,3 +15,12 @@ export const signup = (userData) => {
 export const login = (userData) => {
     return axios.post('/api/users/login', userData);
 };
+
+export const createNote = (note) => {
+    return axios.post('/api/notes', note)
+}
+
+export const getNotes = (creator) => {
+    console.log(creator)
+    return axios.get(`/api/notes/${creator}`, )
+}
